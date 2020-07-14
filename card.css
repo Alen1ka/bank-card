@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+}
+#wrapper {
+    position: absolute;/*другие элементы отображаются на веб-странице словно абсолютно позиционированного элемента и нет. Положение элемента задается свойствами left, top, right и bottom, также на положение влияет значение свойства position родительского элемента. Так, если у родителя значение position установлено как static или родителя нет, то отсчет координат ведется от края окна браузера. Если у родителя значение position задано как fixed, relative или absolute, то отсчет координат ведется от края родительского элемента.*/
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #CFDFE1;
+}
+.card {
+    margin-top: 10px;
+    margin-left: 33%;
+    width: 425px;
+    height: 275px;
+    position: relative;/*положение элемента устанавливается относительно его исходного места. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.*/
+    perspective: 1000px;/*определяет расстояние от плоскости экрана до точки сходимости линий и тем самым задаёт, насколько выражен эффект перспективы. Точка сходимости по умолчанию располагается в центре элемента и может быть изменена с помощью свойства perspective-origin*/
+    /*display: flex;*//*делает все дочерние элементы блоками, представляющие содержимое flex-контейнера в потоке*/
+    /*justify-content: center;
+    align-items: center;*//*flex-элементы выравниваются по центру главной оси*/
+    z-index: 2;
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 1s;/*cвойство для задания анимации с задержками*/
+    backface-visibility: hidden;/*определяет, должна ли быть видна задняя сторона элемента или нет, когда фронтальная сторона не повернута к экрану, в данном случае задняя сторона будет скрыта*/
+    background-color: #fff;
+    border-radius: 8px;
+ }
+img {
+    position: absolute;
+    border-radius: 8px;
+}
+.logo{
+    border-radius: 0px;
+    top: 20px;
+    left: 20px;
+}
+.chip{
+    top: 80px;
+    left: 20px;
+}
+.contactless{
+    top: 83px;
+    left: 80px;
+}
+.visa{
+    top: 20px;
+    left: 320px;
+}
+.back {
+    transform: rotateY(180deg);/*поворот элемента на заданный угол относительно точки трансформации*/
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+.front span{
+    position: absolute;
+    color: white;
+    margin-left: 20px;
+    margin-top: 110px;
+}
+.digit{
+    text-align: center;
+    font-size: 27px;
+    margin-left: 30px;
+}
+.name{
+    margin-top: -10px;
+    font-size: 18px;
+    float: left;
+}
+.day{
+    margin-top: -10px;
+    text-align: center;
+    font-size: 18px;
+    right: -25px;
+    position: absolute;
+}
+.back span{
+    position: absolute;
+    top: 80px;
+    margin-left: 320px;
+}
+.b_visa{
+    top: 200px;
+    left: 320px;
+    opacity: 0.8;
+}
+.magnetic_strip{
+    margin-top: -70px;
+    margin-left: -320px;
+    background: black;
+    width: 425px;
+    height: 50px;
+}
+.w_cvv{
+    color: white;
+}
+#white{
+    margin-top: -10px;
+    margin-left: -320px;
+    background: white;
+    width: 105px;
+    height: 37px;
+    padding-left: 320px;
+    padding-top: 1px;
+    font-size: 13px;
+}
+.sign{
+    top: 200px;
+    left: 20px;
+}
+.input{
+    padding-top: 50px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: -45px;
+    margin-left: 30%;
+    width: 490px;
+    height: 310px;
+    position: relative;
+}
+.num_name{
+    width: 480px;
+    height: 30px;
+}
+.data{
+    width: 90px;
+    height: 30px;
+}
+.cvv{
+    width: 167px;
+    height: 30px;
+    color: black;
+}
